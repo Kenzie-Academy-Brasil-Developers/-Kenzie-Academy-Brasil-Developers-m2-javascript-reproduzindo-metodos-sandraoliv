@@ -1,11 +1,13 @@
-// Metodo Map
-  
+
+const numbers2=[5,3,4,9,11,4,7,9,8,1] 
 const newNumbers=[]
-const numbers=[  61,9,36,94,81,26,76,11,75,89]
+const numbers=[61,9,36,94,81,26,76,11,75,89]
+
+
+// Metodo Map
+
 //Função callback
 function callBackMap(number,index,array){ 
-    console.log(number);
-
     return number*2
     
 }
@@ -45,8 +47,6 @@ console.log( newFilter(numbers, callBackFilter));
 
 
 //Método find
-
-
 function newFindCallback(element){
  return element
 
@@ -56,7 +56,7 @@ function newFind(array,callback){
   
 
     for(let i=0;i<array.length;i++){ 
-        if(array[i] >callback(1000)){
+        if(array[i] >callback(61)){
            
             return  array[i]
         }
@@ -66,6 +66,7 @@ function newFind(array,callback){
 }
 console.log( newFind(numbers,newFindCallback));
        
+
 
 // Método reduce
 
@@ -86,7 +87,7 @@ for(let i=0;i<array.length;i++){
 return cont
 
 }
-console.log (newReduce([1,2,3,4,5],callBackReduce));
+console.log (newReduce(numbers,callBackReduce));
 
 
 
@@ -102,12 +103,9 @@ function newIncludes(element,array){
     }
     return false
 }
-     console.log(newIncludes(6,numbers)) ;
+     console.log(newIncludes(61,numbers)) ;
 
      //Método indexOf
-
-     
-     const numbers2=[5,3,4,9,11,4,7,9,8,1]
     
      function newIndexOf (array,element){
         for (let i=0;i<array.length;i++){
@@ -118,7 +116,7 @@ function newIncludes(element,array){
 
         return -1
     }
-console.log(newIndexOf(numbers2,4));
+    console.log(newIndexOf(numbers,81));
 
 
 
