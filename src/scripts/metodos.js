@@ -14,8 +14,8 @@ function callBackMap(number,index,array){
 // O método
 function newMap(array,callBack){
     let arrayCallBack=[]
-    for (let i =0;i<numbers.length;i++){
-       arrayCallBack.push( callBack(numbers[i],i,array))
+    for (let i =0;i<array.length;i++){
+       arrayCallBack.push(callBack(array[i],i,array))
     
     }
 
@@ -56,7 +56,7 @@ function newFind(array,callback){
   
 
     for(let i=0;i<array.length;i++){ 
-        if(array[i] >callback(61)){
+        if(array[i] == callback(89)){
            
             return  array[i]
         }
@@ -66,18 +66,15 @@ function newFind(array,callback){
 }
 console.log( newFind(numbers,newFindCallback));
        
-
-
 // Método reduce
 
 function callBackReduce(acumulador,element){
    
-return acumulador + element
-
+    return  acumulador + element
 }
 
-function newReduce( array,callback ){
-let cont=0
+function newReduce( array,callback,valorInicial ){
+let cont=valorInicial
 for(let i=0;i<array.length;i++){
     
    
@@ -87,28 +84,26 @@ for(let i=0;i<array.length;i++){
 return cont
 
 }
-console.log (newReduce(numbers,callBackReduce));
-
-
+console.log (newReduce(numbers,callBackReduce,0));
 
 //Método includes
 
 
-function newIncludes(element,array){
+function newIncludes(element,array,index){
 
-    for(let i=0;i<array.length;i++){
+    for(let i=index;i<array.length;i++){
        if(array[i]===element){
        return true
        }
     }
     return false
 }
-     console.log(newIncludes(61,numbers)) ;
+     console.log(newIncludes(61,numbers,0)) ;
 
      //Método indexOf
     
-     function newIndexOf (array,element){
-        for (let i=0;i<array.length;i++){
+     function newIndexOf (array,element,index){
+        for (let i=index;i<array.length;i++){
              if(array[i]== element){
                     return i 
                         }
@@ -116,7 +111,7 @@ function newIncludes(element,array){
 
         return -1
     }
-    console.log(newIndexOf(numbers,81));
+    console.log(newIndexOf(numbers,81,2));
 
 
 
