@@ -91,27 +91,27 @@ console.log (newReduce(numbers,callBackReduce,0));
 
 function newIncludes(element,array,index){
 
-    for(let i=index;i<array.length;i++){
-       if(array[i]===element){
+    for(let i=0;i<array.length;i++){
+       if(array[i]===element ||array[index]===element ){
        return true
        }
     }
     return false
 }
-     console.log(newIncludes(61,numbers,0)) ;
+     console.log(newIncludes(61,numbers,1)) ;
 
      //Método indexOf
     
      function newIndexOf (array,element,index){
-        for (let i=index;i<array.length;i++){
-             if(array[i]== element){
+        for (let i=0;i<array.length;i++){
+             if(array[i]== element ||array[index]==element ){
                     return i 
                         }
         }
 
         return -1
     }
-    console.log(newIndexOf(numbers,81,2));
+    console.log(newIndexOf(numbers,81,0));
 
 
 
