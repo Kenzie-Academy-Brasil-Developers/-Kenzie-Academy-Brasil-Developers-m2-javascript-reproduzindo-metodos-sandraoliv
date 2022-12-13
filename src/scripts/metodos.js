@@ -46,25 +46,36 @@ function callBackFilter(number,index,array){
 console.log( newFilter(numbers, callBackFilter));
 
 
-//Método find
-function newFindCallback(element){
- return element
-
-}
-
-function newFind(array,callback){
-  
-
-    for(let i=0;i<array.length;i++){ 
-        if(array[i] == callback(89)){
-           
-            return  array[i]
-        }
-    
-    }
+  //Método find
+  function newFindCallback(element,index,array){
+ 
+     if(element>70){
+        return element
+     }
+       return false
+   }
    
-}
-console.log( newFind(numbers,newFindCallback));
+   function newFind(array,callback){
+     
+   
+       for(let i=0;i<array.length;i++){ 
+
+
+          const result= callback(array[i] ,i,array)
+          
+          if(result){
+
+           
+            return result
+
+            
+          }
+
+         
+       }
+      
+   }
+   console.log( newFind(numbers,newFindCallback));
        
 // Método reduce
 
@@ -89,28 +100,36 @@ console.log (newReduce(numbers,callBackReduce,0));
 //Método includes
 
 
-function newIncludes(element,array,index){
+function newIncludes(element,array,indexFrom){
+    if(!indexFrom){
+        indexFrom=0
+    }
 
-    for(let i=0;i<array.length;i++){
-       if(array[i]===element ||array[index]===element ){
+    for(indexFrom;indexFrom<array.length;indexFrom++){
+       if(array[indexFrom]===element ){
        return true
        }
     }
     return false
 }
-     console.log(newIncludes(61,numbers,1)) ;
+     console.log(newIncludes(61,numbers,0)) ;
 
      //Método indexOf
     
      function newIndexOf (array,element,index){
-        for (let i=0;i<array.length;i++){
-             if(array[i]== element ||array[index]==element ){
-                    return i 
+        if(!index){
+            index=0
+        }
+
+        for (index;index<array.length;index++){
+             if(array[index]== element ){
+                    return index 
                         }
         }
 
         return -1
     }
+    
     console.log(newIndexOf(numbers,81,0));
 
 
